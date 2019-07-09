@@ -1,7 +1,7 @@
 * {
     font-family: 'Roboto Mono', monospace;
     color: white;
-    background-color: black;
+    background-color: #003334;
 }
 
 h1, p {
@@ -41,16 +41,16 @@ button, select {
 }
 
 .green {
-    color: #01ff01;
+    color: #33CC33;
 }
 
 #qrCodeButton {
     cursor: pointer;
-    color: #FF9900;
+    color: #33CC33;
 }
 
 #qrCodeButton:hover {
-    background-color: #FF9900;
+    background-color: #2DD099;
     color: black;
 }
 
@@ -78,7 +78,7 @@ button, select {
   text-decoration: none;
   border: 2px solid white;
   cursor: pointer;
-  color: #FF9900;
+  color: #33CC33;
   height: 40px;
   width: 300px;
   font-size: 25px;
@@ -86,13 +86,12 @@ button, select {
 }
 
 #openInWallet:hover {
-    background-color: #FF9900;
+    background-color: #2DD099;
     color: black;
-    
+
 }
 
 #currencyMenu {
     width: initial;
     margin-right: 0px;
 }
-
