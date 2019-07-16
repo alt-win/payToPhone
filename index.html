@@ -6,6 +6,10 @@
   <link rel="icon" href="https://bitcoincashers.org/wp-content/uploads/2018/05/cropped-site_identity-32x32.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
+  <!--Pardon my jquery :/-->
+  <script src="FileSaver.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <!--Main js file-->
   <script src="main.js"></script>
 </head>
 
@@ -22,13 +26,22 @@
         <option value="bch">BCH</option>
         <option value="usd">USD</option>
     </select>
+
     <input id="amount" class="green" type="number">
+    <br>
+    <label>Save number to contacts</label>
+    <input type="checkbox" id="saveNumberToContacts">
+    <br><div class="enterName">
+        <label for="" id="name-label">Name</label>
+        <input type="text" name="name" id="firstName" length=20>
+        <button onclick="saveContact();" type="button" name="button">Save Contact</button>
+</div>
     <button onclick="displayPaymentInfo();" id="qrCodeButton">text BCH</button>
     <br>
     <label class="warning" id="error"></label>
     <br>
     <br>
-    <p id="scanMessage"><br><br>Or. . .<br> Scan the below QR code with your wallet to send the coins:</p>
+    <p id="scanMessage"><br><!-- <br>Or. . .<br> Scan the below QR code with your wallet to send the coins:</p> -->
     <br>
     <br>
   </div>

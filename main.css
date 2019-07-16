@@ -59,6 +59,10 @@ button, select {
     color: red;
 }
 
+.enterName{
+  display: none;
+}
+
 #QRCode {
     left: 50%;
     top: 80%;
