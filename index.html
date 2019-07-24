@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
   <!--Pardon my jquery :/-->
-  <script src="FileSaver.js"></script>
-  <!-- <script src="vCards-js-master/index.js"></script>
-  <script src="vCards-js-master/lib/vCardFormatter.js"></script> -->
+  <!-- <script src="FileSaver.js"></script> -->
+  <script src="vCards-js-master/index.js"></script>
+  <!--<script src="vCards-js-master/lib/vCardFormatter.js"></script> -->
 
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   <!--Main js file-->
@@ -32,12 +32,14 @@
 
     <input id="amount" class="green" type="number">
     <br>
+    <!--
     <label>Save number to contacts</label>
-    <input type="checkbox" id="saveNumberToContacts">
-    <br><div class="enterName">
-        <label for="" id="name-label">Name</label>
-        <input type="text" name="name" id="firstName" length=20>
-        <button onclick="saveContact();" type="button" name="button">Save Contact</button>
+    <input type="checkbox" id="saveNumberToContacts">-->
+    <br>
+    <div class="enterName">
+        <!--<label for="" id="name-label">Name</label>
+        <input type="text" name="name" id="firstName" length=20>-->
+        <button onclick="saveContact();" type="button" name="button">Save # in Contacts</button>
 </div>
     <button onclick="displayPaymentInfo();" id="qrCodeButton">text BCH</button>
     <br>
