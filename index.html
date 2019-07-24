@@ -26,29 +26,22 @@
     <br><br>
     <label class="green">Amount </label>
     <select id="currencyMenu">
-        <option value="bch">BCH</option>
-        <option value="usd">USD</option>
+      <option value="bch">BCH</option>
+      <option value="usd">USD</option>
     </select>
 
     <input id="amount" class="green" type="number">
     <br>
-    <!--
-    <label>Save number to contacts</label>
-    <input type="checkbox" id="saveNumberToContacts">-->
     <br>
-    <div class="enterName">
-        <!--<label for="" id="name-label">Name</label>
-        <input type="text" name="name" id="firstName" length=20>-->
-        <button onclick="saveContact();" type="button" name="button">Save # in Contacts</button>
-</div>
+
     <button onclick="displayPaymentInfo();" id="qrCodeButton">text BCH</button>
     <br>
     <label class="warning" id="error"></label>
     <br>
     <br>
     <p id="scanMessage"><br><!-- <br>Or. . .<br> Scan the below QR code with your wallet to send the coins:</p> -->
-    <br>
-    <br>
+      <br>
+      <br>
   </div>
   <br>
   <br>
@@ -56,6 +49,9 @@
 
 
   <div id="centeredDiv">
+    <div class="enterName">
+      <button onclick="saveContact();" type="button" name="button">Save # in Contacts</button>
+    </div>
     <a href="" id="openInWallet">Open in wallet</a>
   </div>
   <img id="QRCode">
