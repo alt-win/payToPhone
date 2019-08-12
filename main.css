@@ -67,8 +67,23 @@ h1 {
 }
 
 .phoneInput {
+  position: relative;
   background-color: white;
+  margin-top: 10px;
+  transform: translateX(-50%);
+  left: 50%;
 }
+.button-submitTel {
+  margin: 10px;
+  position: relative;
+}
+
+.button-submitTel button {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
 
 /* .button:active {
   background-color: #33CC33;
