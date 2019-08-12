@@ -1,101 +1,171 @@
+/*
+green_1: #003334
+green_2: #33CC33
+green_3: #2DD099
+*/
 * {
-    font-family: 'Roboto Mono', monospace;
-    color: white;
-    background-color: #003334;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  background-color: #003334;
 }
+
+body {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  background-color: #003334;
+  position: fixed;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.header-text {}
+
+.main {
+  position: static;
+  height: 100vh;
+  background-image: url(../img/bchino.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.footer {}
 
 h1, p {
-    text-align: center;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-p {
-    font-size: 25px;
-}
-
-#centeredDiv {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    white-space:nowrap;
-}
-
-input, label, button, select{
-    display: inline-block;
-    font-size: 25px;
-}
-
-input, button, select {
-    width: 300px;
-    height: 30px;
-    margin-left: 0px;
-    margin-right: 35px;
-}
-
-button, select {
-    height: 40px; /*becuase without a larger height the text doesn't fit in*/
-}
-
-.green {
-    color: #33CC33;
-}
-
-#qrCodeButton {
-    cursor: pointer;
-    color: #33CC33;
-}
-
-#qrCodeButton:hover {
-    background-color: #2DD099;
-    color: black;
-}
-
-.warning {
-    font-size: 20px;
-    color: red;
-}
-
-.enterName{
-  display: none;
-}
-
-#QRCode {
-    left: 50%;
-    top: 80%;
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
-#scanMessage{
-    display: none;
-}
-
-#openInWallet {
-  display: none;
-  text-decoration: none;
-  border: 2px solid white;
-  cursor: pointer;
-  color: #33CC33;
-  height: 40px;
-  width: 300px;
-  font-size: 25px;
   text-align: center;
 }
 
-#openInWallet:hover {
-    background-color: #2DD099;
-    color: black;
-
+h1 {
+  font-size: calc(40px + 1vh);
 }
 
-#currencyMenu {
-    width: initial;
-    margin-right: 0px;
+.button {
+  text-decoration: none;
+  background-color: #003334;
+  position: absolute;
+  font-size: calc(15px + 1vw);
+  padding: calc(25px + 1vw);
+  border-radius: calc(20px + 1vw);
+  position: absolute;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  animation-name: moveit;
+  animation-duration: 2.5s;
+}
+
+.button:hover {
+  top: 50.25%;
+  background-color: #33CC33;
+}
+
+.phoneInput {
+  background-color: white;
+}
+
+/* .button:active {
+  background-color: #33CC33;
+  animation-name: clickMainButton;
+  animation-duration: 0.5s;
+} */
+
+/* @keyframes clickMainButton {
+  from {
+    top: 48%;
+  }
+
+  to {
+    top: 50%;
+  }
+} */
+
+@keyframes moveit {
+  0% {
+    top: 100%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+p {
+  font-size: calc(25px + 1vh);
+}
+
+/*
+#centeredDiv {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+}
+
+input, label, button, select {
+  display: inline-block;
+  font-size: 25px;
+}
+
+input, button, select {
+  width: 300px;
+  height: 30px;
+  margin-left: 0px;
+  margin-right: 35px;
+}
+
+button, select {
+  height: 40px;
+  // becuase without a larger height the text doesn't fit in
+}*/
+.green {
+  color: #33CC33;
+}
+
+.modal {
+  display: block;; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
