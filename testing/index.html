@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Text BCH - Send BCH to a Phone Number</title>
   <link rel="icon" href="https://bitcoincashers.org/wp-content/uploads/2018/05/cropped-site_identity-32x32.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -25,7 +27,7 @@
       </div>
     </div>
 
-    <button href="#" onclick="openModal()" id="myBtn" class="button">Enter phone number</button>
+    <button href="#" onclick="openMyModal()" id="myBtn" class="button">Enter phone number</button>
 
     <div class="footer">
 
@@ -34,54 +36,67 @@
   <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
+      <span class="close" onclick="closeMyModal()">&times;</span>
       <p>Enter Phone #:</p>
       <div class="phoneInput">
         <input type="tel" name="phoneNumber" value="" placeholder="+1 (234) 567-8990">
       </div>
       <div class="button-submitTel">
-        <button type="button" name="submit">Submit</button>
+        <button type="button" name="submit" onclick="openKeypad()">Submit</button>
       </div>
+      <span id="inclCOcode">Be sure to include the country code</span>
     </div>
 
   </div>
 
-  <div class="keypad">
+  <div id="keypadWindow" class="keypad">
     <div class="top">
       <div class="panel">
+        <div class="">
 
+        </div>
+        <div class="currencyMenu">
+          <select>
+            <option value="USD">USD</option>
+            <option value="BCH">BCH</option>
+          </select>
+        </div>
+        <div class="">
+
+        </div>
       </div>
       <div class="numberArea">
         <p>0.00</p>
       </div>
     </div>
     <div class=buttonArea>
-      <div class="buttonRow">
-        <button type="button" name="button" value="1">1</button>
-        <button type="button" name="button" value="2">2</button>
-        <button type="button" name="button" value="3">3</button>
-      </div>
-      <div class="buttonRow">
-        <button type="button" name="button" value="4">4</button>
-        <button type="button" name="button" value="5">5</button>
-        <button type="button" name="button" value="6">6</button>
-      </div>
-      <div class="buttonRow">
-        <button type="button" name="button" value="7">7</button>
-        <button type="button" name="button" value="8">8</button>
-        <button type="button" name="button" value="9">9</button>
-      </div>
-      <div class="buttonRow">
-        <button type="button" name="button" value="c">C</button>
-        <button type="button" name="button" value="0">0</button>
-        <button type="button" name="button" value="del">&#8678;</button>
-      </div>
+      <!-- <div class="buttonRow"> -->
+      <button type="button" name="button" value="1">1</button>
+      <button type="button" name="button" value="2">2</button>
+      <button type="button" name="button" value="3">3</button>
+      <!-- </div>
+      <div class="buttonRow"> -->
+      <button type="button" name="button" value="4">4</button>
+      <button type="button" name="button" value="5">5</button>
+      <button type="button" name="button" value="6">6</button>
+      <!-- </div>
+      <div class="buttonRow"> -->
+      <button type="button" name="button" value="7">7</button>
+      <button type="button" name="button" value="8">8</button>
+      <button type="button" name="button" value="9">9</button>
+      <!-- </div>
+      <div class="buttonRow"> -->
+      <button type="button" name="button" value="c">C</button>
+      <button type="button" name="button" value="0">0</button>
+      <button type="button" name="button" value="del">&#8678;</button>
+      <!-- </div> -->
     </div>
 
     <div class="proceed">
-      <script src="https://paybutton.cash/pre-release/v0.1/js/paybutton.min.js">
+      <script src="https://alt-win.github.io/paybutton.github.io/pre-release/v0.1/js/paybutton.min.js">
       </script>
-      <button type="button" name="button" class="pay-button" class="pay-button" button-text="Next" button-text-2="" amount="" amount-type="" address="bitcoincash:" success-msg="" paywall-field="" success-callback="">
+      <button type="button" name="button" class="pay-button" class="pay-button" button-text="Next" button-text-2="" amount="5" amount-type="USD" address="bitcoincash:qz7uphl05rk2g2wf0k6g59l0gffpf2gzf53m3tzjlu" success-msg="" paywall-field=""
+        success-callback="">
       </button>
     </div>
   </div>

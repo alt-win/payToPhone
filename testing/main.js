@@ -46,14 +46,18 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-function openModal() {
+function openMyModal() {
   document.getElementById("myModal").style.display = "block";
   console.log("button clicked");
 }
 
 // When the user clicks on <span> (x), close the modal
-function closeModal() {
+function closeMyModal() {
   document.getElementById("myModal").style.display = "none";
+}
+
+function openKeypad() {
+  document.getElementById("keypadWindow").style.display = "block";
 }
 
 // When the user clicks anywhere outside of the modal, close it
