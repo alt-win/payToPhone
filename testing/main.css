@@ -63,6 +63,7 @@ h1 {
   left: 50%;
   animation-name: moveit;
   animation-duration: 2.5s;
+  outline: none;
 }
 
 .button:hover {
@@ -99,6 +100,8 @@ h1 {
   left: 50%;
   border-radius: 15px;
   padding: 5px;
+  outline: none;
+
 }
 
 #inclCOcode {
@@ -246,6 +249,11 @@ button, select {
   border-radius: 10%;
   font-size: 10vh;
   border: 2px solid black;
+  outline: none;
+}
+
+.buttonArea button:active {
+  background-color: #2DD099;
 }
 
 .buttonArea {
