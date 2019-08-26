@@ -37,6 +37,7 @@
 //     return; //the following code will only run if no errors above were detected
 //
 //   }
+var runningTotal = 0.00;
 //var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -58,6 +59,31 @@ function closeMyModal() {
 
 function openKeypad() {
   document.getElementById("keypadWindow").style.display = "block";
+}
+
+function keyPress(keyInput) {
+  switch (keyInput) {
+    case -2: {
+      runningTotal=0.00;
+      updateKeypad();
+    } break;
+    case -1: {
+      runningTotal/=10;
+      runningTotal=(Math.trunc(runningTotal*100))/100;
+      // runningTotal-=(keyInput*=0.01);
+      updateKeypad();
+    } break;
+    default: {
+      runningTotal*=10;
+      runningTotal+=(keyInput*=0.01);
+      updateKeypad();
+    }
+
+  }
+}
+function updateKeypad() {
+  document.getElementById("numberAreaParagraph").innerHTML=runningTotal.toFixed(2);
+  document.getElementById("pay-button").setAttribute("amount",runningTotal.toFixed(2));
 }
 
 // When the user clicks anywhere outside of the modal, close it

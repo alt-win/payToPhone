@@ -66,36 +66,36 @@
         </div>
       </div>
       <div class="numberArea">
-        <p>0.00</p>
+        <p id="numberAreaParagraph">0.00</p>
       </div>
     </div>
     <div class=buttonArea>
       <!-- <div class="buttonRow"> -->
-      <button type="button" name="button" value="1">1</button>
-      <button type="button" name="button" value="2">2</button>
-      <button type="button" name="button" value="3">3</button>
+      <button type="button" name="button" onclick="keyPress(1)" value="1">1</button>
+      <button type="button" name="button" onclick="keyPress(2)" value="2">2</button>
+      <button type="button" name="button" onclick="keyPress(3)" value="3">3</button>
       <!-- </div>
       <div class="buttonRow"> -->
-      <button type="button" name="button" value="4">4</button>
-      <button type="button" name="button" value="5">5</button>
-      <button type="button" name="button" value="6">6</button>
+      <button type="button" name="button" onclick="keyPress(4)" value="4">4</button>
+      <button type="button" name="button" onclick="keyPress(5)" value="5">5</button>
+      <button type="button" name="button" onclick="keyPress(6)" value="6">6</button>
       <!-- </div>
       <div class="buttonRow"> -->
-      <button type="button" name="button" value="7">7</button>
-      <button type="button" name="button" value="8">8</button>
-      <button type="button" name="button" value="9">9</button>
+      <button type="button" name="button" onclick="keyPress(7)" value="7">7</button>
+      <button type="button" name="button" onclick="keyPress(8)" value="8">8</button>
+      <button type="button" name="button" onclick="keyPress(9)" value="9">9</button>
       <!-- </div>
       <div class="buttonRow"> -->
-      <button type="button" name="button" value="c">C</button>
-      <button type="button" name="button" value="0">0</button>
-      <button type="button" name="button" value="del">&#8678;</button>
+      <button type="button" name="button" onclick="keyPress(-2)" value="c">C</button>
+      <button type="button" name="button" onclick="keyPress(0)" value="0">0</button>
+      <button type="button" name="button" onclick="keyPress(-1)" value="del">&#8678;</button>
       <!-- </div> -->
     </div>
 
     <div class="proceed">
       <script src="https://alt-win.github.io/paybutton.github.io/pre-release/v0.1/js/paybutton.min.js">
       </script>
-      <button type="button" name="button" class="pay-button" class="pay-button" button-text="Next" button-text-2="" amount="5" amount-type="USD" address="bitcoincash:qz7uphl05rk2g2wf0k6g59l0gffpf2gzf53m3tzjlu" success-msg="" paywall-field=""
+      <button type="button" name="button" class="pay-button" id="pay-button" button-text="Next" button-text-2="" amount="0" amount-type="USD" address="bitcoincash:qpamktwakukx236jsynwg7df4c53wrhlssqm7sragn" success-msg="" paywall-field=""
         success-callback="">
       </button>
     </div>
