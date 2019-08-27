@@ -37,7 +37,49 @@
 //     return; //the following code will only run if no errors above were detected
 //
 //   }
+var phoneNumber = 0;
+var bchAddress = "bitcoincash:qpamktwakukx236jsynwg7df4c53wrhlssqm7sragn";
+var currencyUnit = "USD";
+var decimalPlaces = 2;
 var runningTotal = 0.00;
+getUrlData(location.href);
+
+function getUrlData(str) {
+  //var str=location.href;
+  str = str.split("?");
+  if (str[1]) {
+    str = str[1].split("&");
+    var obj = {};
+    for (var i = 0; i < str.length; i++) {
+      var p = str[i].split("=");
+      var q = p[0];
+      var r = p[1];
+      obj[q] = r;
+    }
+    //console.log(obj);
+    if (obj.phone) {
+      phoneNumber = obj.phone;
+      //console.log(phoneNumber);
+    }
+    if (obj.address) {
+      bchAddress = obj.address;
+    }
+    if (obj.currency) {
+      currencyUnit = obj.currency;
+    }
+    if (obj.decimal) {
+      decimalPlaces = obj.decimal;
+    }
+
+    //return obj;
+  } else {
+    console.log("No URL parameters found");
+  }
+
+  //console.log(obj);
+  //getUrlData("https://bzerb.com/?one=uno&two=dos&three=tres");
+
+}
 //var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -64,26 +106,29 @@ function openKeypad() {
 function keyPress(keyInput) {
   switch (keyInput) {
     case -2: {
-      runningTotal=0.00;
-      updateKeypad();
-    } break;
-    case -1: {
-      runningTotal/=10;
-      runningTotal=(Math.trunc(runningTotal*100))/100;
-      // runningTotal-=(keyInput*=0.01);
-      updateKeypad();
-    } break;
-    default: {
-      runningTotal*=10;
-      runningTotal+=(keyInput*=0.01);
+      runningTotal = 0;
       updateKeypad();
     }
+    break;
+  case -1: {
+    runningTotal /= 10;
+    runningTotal = (Math.trunc(runningTotal * Math.pow(10, decimalPlaces))) / Math.pow(10, decimalPlaces);
+    // runningTotal-=(keyInput*=0.01);
+    updateKeypad();
+  }
+  break;
+  default: {
+    runningTotal *= 10;
+    runningTotal += (keyInput *= Math.pow(10, -decimalPlaces));
+    updateKeypad();
+  }
 
   }
 }
+
 function updateKeypad() {
-  document.getElementById("numberAreaParagraph").innerHTML=runningTotal.toFixed(2);
-  document.getElementById("pay-button").setAttribute("amount",runningTotal.toFixed(2));
+  document.getElementById("numberAreaParagraph").innerHTML = runningTotal.toFixed(decimalPlaces);
+  document.getElementById("pay-button").setAttribute("amount", runningTotal.toFixed(decimalPlaces));
 }
 
 // When the user clicks anywhere outside of the modal, close it
