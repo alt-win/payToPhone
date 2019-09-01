@@ -18,7 +18,7 @@
   <script src="main.js"></script>
 </head>
 
-<body>
+<body onload="tBCHStartFunction();">
   <div class="main">
     <div class="header">
       <div class="header-text">
@@ -39,10 +39,10 @@
       <span class="close" onclick="closeMyModal()">&times;</span>
       <p>Enter Phone #:</p>
       <div class="phoneInput">
-        <input type="tel" name="phoneNumber" value="" placeholder="+1 (234) 567-8990">
+        <input id="phoneInput" type="tel" name="phoneNumber" value="" placeholder="+1 (234) 567-8990">
       </div>
       <div class="button-submitTel">
-        <button type="button" name="submit" onclick="openKeypad()">Submit</button>
+        <button type="button" name="submit" onclick="submitTel()">Submit</button>
       </div>
       <span id="inclCOcode">Be sure to include the country code</span>
     </div>
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="numberArea">
-        <p id="numberAreaParagraph">0.00</p>
+        <p id="numberAreaParagraph"></p>
       </div>
     </div>
     <div class=buttonArea>

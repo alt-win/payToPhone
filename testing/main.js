@@ -41,8 +41,14 @@ var phoneNumber = 0;
 var bchAddress = "bitcoincash:qpamktwakukx236jsynwg7df4c53wrhlssqm7sragn";
 var currencyUnit = "USD";
 var decimalPlaces = 2;
-var runningTotal = 0.00;
-getUrlData(location.href);
+var runningTotal = 0;
+
+// document.onload="tBCHStartFunction()";
+
+function tBCHStartFunction() {
+  console.log("Start Function");
+  getUrlData(location.href);
+}
 
 function getUrlData(str) {
   //var str=location.href;
@@ -59,16 +65,20 @@ function getUrlData(str) {
     //console.log(obj);
     if (obj.phone) {
       phoneNumber = obj.phone;
+      openKeypad();
       //console.log(phoneNumber);
     }
     if (obj.address) {
       bchAddress = obj.address;
+      openKeypad();
     }
     if (obj.currency) {
       currencyUnit = obj.currency;
+      openKeypad();
     }
     if (obj.decimal) {
       decimalPlaces = obj.decimal;
+      openKeypad();
     }
 
     //return obj;
@@ -99,8 +109,29 @@ function closeMyModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
+function submitTel() {
+  var num = document.getElementById("phoneInput").value;
+  num = num.split('');
+  var num2=[];
+  for (var i = 0; i < num.length; i++) {
+    num[i]= parseInt(num[i]);
+    if (!(isNaN(num[i]))) {
+      num2.push(num[i]);
+    }
+  }
+  var num3=0;
+  for (var i = 0; i < num2.length; i++) {
+    num3*=10;
+    num3+=num2[i];
+  }
+  //console.log(num3);
+  //phoneInput=num3;
+  window.open(location.href+"?phone="+num3,"_self")
+}
+
 function openKeypad() {
   document.getElementById("keypadWindow").style.display = "block";
+  updateKeypad();
 }
 
 function keyPress(keyInput) {
