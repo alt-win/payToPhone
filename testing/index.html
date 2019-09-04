@@ -31,7 +31,11 @@
     </div> -->
 
     <div class="button">
-      <input href="#" type="tel" onclick="" id="phoneInput" placeholder="+1 (234) 567-8990"></input>
+        <select id="countryCode" onchange="changeCountryCode()">
+          <option value="1" id="defaultCode">+1</option>
+          <option value="custom" id="customCode">Enter Country Code</option>
+        </select>
+      <input href="#" type="tel" onclick="" id="phoneInput" placeholder="(234) 567-8990"></input>
       <button type="submit" name="button" class="button-submitTel" onclick="submitTel()">></button>
     </div>
 

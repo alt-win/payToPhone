@@ -56,7 +56,7 @@ h1 {
 .enterAnPhoneNumber {
   color: white;
   position: absolute;
-  margin-bottom:50px;
+  margin-bottom: 50px;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -81,6 +81,36 @@ h1 {
   animation-name: moveit;
   animation-duration: 2.5s;
   outline: none;
+}
+
+.button select {
+  background-color: rgba(0, 0, 0, 0);
+  /* background-color: #36393F; */
+  font-size: calc(15px + 1vw);
+  color: #fff;
+  border-radius: calc(20px + 1vw);
+  min-width: 15%;
+  max-width: 50px;
+  padding-left: 5px;
+  text-align: center;
+}
+
+#defaultCode {
+  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #36393F !important;
+  font-size: calc(5px + 1vw);
+  color: #fff;
+  /* border-radius: calc(20px + 1vw); */
+  text-align: center;
+}
+
+#customCode {
+  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #36393F!important;
+  font-size: calc(5px + 1vw);
+  color: #fff;
+  /* border-radius: calc(20px + 1vw); */
+  text-align: center;
 }
 
 .button input {

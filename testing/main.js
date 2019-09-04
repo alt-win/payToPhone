@@ -93,24 +93,32 @@ function getUrlData(str) {
 //var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+// var btn = document.getElementById("myBtn");
+//
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+//
+// // When the user clicks on the button, open the modal
+// function openMyModal() {
+//   document.getElementById("myModal").style.display = "block";
+//   console.log("button clicked");
+// }
+//
+// // When the user clicks on <span> (x), close the modal
+// function closeMyModal() {
+//   document.getElementById("myModal").style.display = "none";
+// }
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+function changeCountryCode() {
+  //console.log("changeCountryCode()");
+  var cCode= prompt("Please Enter Country Code:","+");
+  document.getElementById('customCode').innerHTML=cCode;
+  document.getElementById('customCode').value=cCode;
 
-// When the user clicks on the button, open the modal
-function openMyModal() {
-  document.getElementById("myModal").style.display = "block";
-  console.log("button clicked");
-}
-
-// When the user clicks on <span> (x), close the modal
-function closeMyModal() {
-  document.getElementById("myModal").style.display = "none";
 }
 
 function submitTel() {
-  var num = document.getElementById("phoneInput").value;
+  var num = document.getElementById("countryCode").value+document.getElementById("phoneInput").value;
   num = num.split('');
   var num2=[];
   for (var i = 0; i < num.length; i++) {
