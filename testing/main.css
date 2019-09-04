@@ -117,7 +117,8 @@ h1 {
 .button-submitTel {
   /* display: run-in; */
   /* position: relative; */
-  background-color: inherit;
+  /* background-color: inherit; */
+  background-color: rgba(0, 0, 0, 0);
   border-radius: inherit;
   border-right: none;
   border-top: none;
