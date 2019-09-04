@@ -26,20 +26,26 @@
         <p>Easily connect your <a class="green" href="https://bitcoincash.org">Bitcoin Cash</a> wallet to <a class="green" href="https://cointext.io/">Cointext</a>.</p>
       </div>
     </div>
+    <!-- <div class="enterAnPhoneNumber">
+      <span>Enter a Phone Number:</span>
+    </div> -->
 
-    <button href="#" onclick="openMyModal()" id="myBtn" class="button">Enter phone number</button>
+    <div class="button">
+      <input href="#" type="tel" onclick="" id="phoneInput" placeholder="+1 (234) 567-8990"></input>
+      <button type="submit" name="button" class="button-submitTel" onclick="submitTel()">></button>
+    </div>
 
     <div class="footer">
 
     </div>
   </div>
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
+
+  <!-- <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeMyModal()">&times;</span>
       <p>Enter Phone #:</p>
       <div class="phoneInput">
-        <input id="phoneInput" type="tel" name="phoneNumber" value="" placeholder="+1 (234) 567-8990">
+        <input id="phoneInput" type="tel" name="phoneNumber" value="" >
       </div>
       <div class="button-submitTel">
         <button type="button" name="submit" onclick="submitTel()">Submit</button>
@@ -47,7 +53,7 @@
       <span id="inclCOcode">Be sure to include the country code</span>
     </div>
 
-  </div>
+  </div> -->
 
   <div id="keypadWindow" class="keypad">
     <div class="top">

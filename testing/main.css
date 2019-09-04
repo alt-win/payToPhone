@@ -13,7 +13,7 @@ green_3: #2DD099
 
 body {
   background-color: #003334;
-  color:#fff;
+  color: #fff;
   position: static;
   width: 100%;
   height: 100%;
@@ -21,7 +21,7 @@ body {
 
 .header {
   background-color: #003334;
-  color:#fff;
+  color: #fff;
   position: fixed;
   width: 100%;
   padding-bottom: 10px;
@@ -31,7 +31,7 @@ body {
 
 .main {
   background-color: #003334;
-  color:#fff;
+  color: #fff;
   position: static;
   height: 100vh;
   background-image: url(https://i.ibb.co/g7S7SjW/bchino.jpg);
@@ -43,40 +43,93 @@ body {
 
 h1, p {
   background-color: #003334;
-  color:#fff;
+  color: #fff;
   text-align: center;
 }
 
 h1 {
   background-color: #003334;
-  color:#fff;
+  color: #fff;
   font-size: calc(40px + 1vh);
 }
 
+.enterAnPhoneNumber {
+  color: white;
+  position: absolute;
+  margin-bottom:50px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
 .button {
-  background-color: #33CC33;
-  background-color: #33CC33;
-  color:#fff;
+  /* background-color: #33CC33;*/
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
   position: absolute;
   font-size: calc(15px + 1vw);
-  padding: calc(25px + 1vw);
+  /* padding: calc(5px + 0.5vw); */
   border-radius: calc(20px + 1vw);
   position: absolute;
   margin: 0;
   transform: translate(-50%, -50%);
-  top: 50%;
   left: 50%;
+  top: 50%;
+  min-width: 300px;
   animation-name: moveit;
   animation-duration: 2.5s;
   outline: none;
 }
 
-.button:hover {
-  top: 50.25%;
-  background-color: #2DD099;
+.button input {
+  /* background-color: #33CC33;*/
+  /* display: inline-block; */
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  position: relative;
+  font-size: calc(15px + 1vw);
+  padding: calc(5px + 0.5vw);
+  border-radius: calc(20px + 1vw);
+  border: none;
+  width: 100%;
+  /* position: absolute;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%; */
+  /* animation-name: moveit;
+  animation-duration: 2.5s; */
+  flex-grow: 2;
+  outline: none;
 }
 
-.phoneInput {
+.button input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.button:hover {
+  top: 50.25%;
+  /* background-color: #2DD099; */
+}
+
+.button-submitTel {
+  /* display: run-in; */
+  /* position: relative; */
+  background-color: inherit;
+  border-radius: inherit;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  /* height: 100%;*/
+  min-width: 20%;
+  color: inherit;
+  font-size: 200%;
+  /* z-index: 1; */
+}
+
+/* .phoneInput {
   position: relative;
   background-color: white;
   margin-top: 10px;
@@ -91,9 +144,8 @@ h1 {
   margin-left: 50%;
   border-radius: 15px;
   padding: 5px;
-}
-
-.button-submitTel {
+} */
+/* .button-submitTel {
   margin: 10px;
   position: relative;
 }
@@ -108,8 +160,7 @@ h1 {
   padding: 5px;
   outline: none;
 
-}
-
+} */
 #inclCOcode {
   text-align: right;
   color: black;
@@ -230,7 +281,7 @@ button, select {
   z-index: 1;
   background-color: #003334;
   background-color: #003334;
-  color:#fff;
+  color: #fff;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -247,7 +298,7 @@ button, select {
   height: 22%;
 }*/
 .buttonArea button {
-  color:#fff;
+  color: #fff;
   background-color: #33CC33;
   position: relative;
   justify-self: stretch;
@@ -295,7 +346,6 @@ button, select {
   height: 70%;
   width: 50%;
 } */
-
 /*
  .proceed button {
   color: black;
@@ -323,7 +373,6 @@ button, select {
   margin: auto;
   pading: 25px;
   max-width: 1000px;
-
 }
 
 .top .numberArea p {
@@ -333,7 +382,6 @@ button, select {
   background-color: white;
   position: relative;
   height: 100%;
-
 }
 
 .currencyMenu {
@@ -353,12 +401,12 @@ button, select {
   /* left: 50%;
   translateX(-50%); */
 }
-.currencyMenu select option{
-  color: black
 
+.currencyMenu select option {
+  color: black
 }
 
 .paybutton-modal.fade-and-drop.paybutton-open {
-background-color: #fff;
-/* color: black !important; */
+  background-color: #fff;
+  /* color: black !important; */
 }
