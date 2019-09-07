@@ -63,27 +63,32 @@ function getUrlData(str) {
       obj[q] = r;
     }
     //console.log(obj);
-    if (obj.phone) {
+    if ((obj.phone) || (obj.address)) {
       phoneNumber = obj.phone;
+      bchAddress = obj.address;
+
+      if (obj.currency) {
+        currencyUnit = obj.currency;
+        document.getElementById('pay-button').setAttribute("amount-type", currencyUnit);
+
+        if (!(currencyUnit == "USD" || currencyUnit == "BCH")) {
+          var opt = document.createElement('option');
+          opt.value = currencyUnit;
+          opt.innerHTML = currencyUnit;
+          document.getElementById('currency').appendChild(opt);
+        }
+        document.getElementById('currency').value = currencyUnit;
+      }
+      //if true, then
+      if (obj.decimal) {
+        decimalPlaces = obj.decimal;
+      }
       openKeypad();
       //console.log(phoneNumber);
     }
-    if (obj.address) {
-      bchAddress = obj.address;
-      openKeypad();
-    }
-    if (obj.currency) {
-      currencyUnit = obj.currency;
-      openKeypad();
-    }
-    if (obj.decimal) {
-      decimalPlaces = obj.decimal;
-      openKeypad();
-    }
-
     //return obj;
   } else {
-    console.log("No URL parameters found");
+    console.log("No opening URL parameters found");
   }
 
   //console.log(obj);
@@ -111,30 +116,30 @@ function getUrlData(str) {
 
 function changeCountryCode() {
   //console.log("changeCountryCode()");
-  var cCode= prompt("Please Enter Country Code:","+");
-  document.getElementById('customCode').innerHTML=cCode;
-  document.getElementById('customCode').value=cCode;
+  var cCode = prompt("Please Enter Country Code:", "+");
+  document.getElementById('customCode').innerHTML = cCode;
+  document.getElementById('customCode').value = cCode;
 
 }
 
 function submitTel() {
-  var num = document.getElementById("countryCode").value+document.getElementById("phoneInput").value;
+  var num = document.getElementById("countryCode").value + document.getElementById("phoneInput").value;
   num = num.split('');
-  var num2=[];
+  var num2 = [];
   for (var i = 0; i < num.length; i++) {
-    num[i]= parseInt(num[i]);
+    num[i] = parseInt(num[i]);
     if (!(isNaN(num[i]))) {
       num2.push(num[i]);
     }
   }
-  var num3=0;
+  var num3 = 0;
   for (var i = 0; i < num2.length; i++) {
-    num3*=10;
-    num3+=num2[i];
+    num3 *= 10;
+    num3 += num2[i];
   }
   //console.log(num3);
   //phoneInput=num3;
-  window.open(location.href+"?phone="+num3,"_self")
+  window.open(location.href + "?phone=" + num3, "_self")
 }
 
 function openKeypad() {
@@ -168,6 +173,20 @@ function keyPress(keyInput) {
 function updateKeypad() {
   document.getElementById("numberAreaParagraph").innerHTML = runningTotal.toFixed(decimalPlaces);
   document.getElementById("pay-button").setAttribute("amount", runningTotal.toFixed(decimalPlaces));
+}
+
+function changeCurrency() {
+  var currency = document.getElementById("currency").value;
+  if (currency == "custom") {
+    currency = prompt("Enter a custom currency ticker:");
+    currency = currency.toUpperCase();
+  }
+  var url = location.href;
+  if (url.indexOf("&currency=") >= 0) {
+    var myURL = url.replace("&currency=" + currencyUnit,"");
+    url=myURL;
+  }
+  window.open(url + "&currency=" + currency);
 }
 
 // When the user clicks anywhere outside of the modal, close it
