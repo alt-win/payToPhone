@@ -106,7 +106,7 @@ h1 {
 
 #customCode {
   background-color: rgba(0, 0, 0, 0.1);
-  background-color: #36393F!important;
+  background-color: #36393F !important;
   font-size: calc(5px + 1vw);
   color: #fff;
   /* border-radius: calc(20px + 1vw); */
@@ -389,6 +389,8 @@ button, select {
   width: 50%;
 } */
 .top .panel {
+  display: flex;
+  flex-direction: row;
   position: relative;
   width: auto;
   height: 25%;
@@ -419,7 +421,7 @@ button, select {
   color: black;
   position: relative;
   height: 100%;
-  margin-left: 50%;
+  /* margin-left: 50%; */
   justify-content: center;
 }
 
@@ -435,6 +437,19 @@ button, select {
 
 .currencyMenu select option {
   color: black
+}
+
+.closeKeypad {
+  justify-content: right;
+}
+
+.closeKeypad a {
+  justify-content: right;
+  font-style: bold;
+  font-weight: 10;
+  color: white;
+  text-decoration: none;
+  font-family: cursive;
 }
 
 .paybutton-modal.fade-and-drop.paybutton-open {

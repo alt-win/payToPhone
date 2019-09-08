@@ -189,6 +189,11 @@ function changeCurrency() {
   window.open(url + "&currency=" + currency);
 }
 
+function goToHomePage() {
+  //replace this with standard link when site is live.
+  window.open(location.origin);
+}
+
 // When the user clicks anywhere outside of the modal, close it
 // window.onclick = function(event) {
 //   if (event.target == modal) {
