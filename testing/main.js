@@ -40,8 +40,10 @@
 var phoneNumber = 0;
 var bchAddress = "bitcoincash:qpamktwakukx236jsynwg7df4c53wrhlssqm7sragn";
 var currencyUnit = "USD";
-var decimalPlaces = 2;
+var decimalPlaces = 0;
 var runningTotal = 0;
+var runningTotalStr="0";
+
 
 // document.onload="tBCHStartFunction()";
 
@@ -149,21 +151,33 @@ function openKeypad() {
 
 function keyPress(keyInput) {
   switch (keyInput) {
-    case -2: {
-      runningTotal = 0;
-      updateKeypad();
-    }
-    break;
+    // case -2: {
+    //   decimalPlaces++;
+    //   //updateKeypad();
+    // }
+    //break;
   case -1: {
-    runningTotal /= 10;
-    runningTotal = (Math.trunc(runningTotal * Math.pow(10, decimalPlaces))) / Math.pow(10, decimalPlaces);
-    // runningTotal-=(keyInput*=0.01);
+    // runningTotal /= 10;
+    // runningTotal = (Math.trunc(runningTotal * Math.pow(10, decimalPlaces))) / Math.pow(10, decimalPlaces);
+    // // runningTotal-=(keyInput*=0.01);
+    if (runningTotalStr.length==1) {
+      runningTotalStr="0";
+    } else {
+      runningTotalStr=runningTotalStr.slice(0, -1);
+    }
+
     updateKeypad();
   }
   break;
   default: {
-    runningTotal *= 10;
-    runningTotal += (keyInput *= Math.pow(10, -decimalPlaces));
+    //use the concat() method
+    if (runningTotalStr==="0") {
+      runningTotalStr=keyInput;
+    } else {
+      runningTotalStr=runningTotalStr.concat(keyInput);
+    }
+    // runningTotal *= 10;
+    // runningTotal += (keyInput *= Math.pow(10, -decimalPlaces));
     updateKeypad();
   }
 
@@ -171,8 +185,9 @@ function keyPress(keyInput) {
 }
 
 function updateKeypad() {
-  document.getElementById("numberAreaParagraph").innerHTML = runningTotal.toFixed(decimalPlaces);
-  document.getElementById("pay-button").setAttribute("amount", runningTotal.toFixed(decimalPlaces));
+  document.getElementById("numberAreaParagraph").innerHTML = runningTotalStr;   //.toFixed(decimalPlaces);
+  runningTotal=parseFloat(runningTotalStr);
+  document.getElementById("pay-button").setAttribute("amount", runningTotal);   //.toFixed(decimalPlaces));
 }
 
 function changeCurrency() {
